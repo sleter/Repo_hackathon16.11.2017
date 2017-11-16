@@ -1,0 +1,5 @@
+-> Co na obiad
+-> logowanie (baza hase³ i loginów)
+-> opcje : dodaj przepis(lokalna baza sqlite3), udostêpnij przepis(g³owna baza danych w internecie), {wybieranie na podstawie przyzwyczajeñ lub wyborów}
+->       : przepis (usuñ, udostêpnij), wybierz obiad(z bazy g³ownej losowane z id), losuj obiad(swap w prawo swap w lewo nie)
+->  
