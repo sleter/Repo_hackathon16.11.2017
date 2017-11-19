@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+#: import main yourdishes
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+#: include deleterec.kv
+
+
+YourDishes:
+
+<YourDishes>:
+    dishes_list: dishes_list_view
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        BoxLayout:
+            height: "40dp"
+
+            Label:
+                color: 1, .5, 0, 1
+                font_size: 32
+                height: root.height
+                text: "Twoje Przepisy"
+
+        BoxLayout:
+            height: "40dp"
+
+            Button:
+                text: "Refresh"
+                size_hint_x: 15
+                on_press: root.show()
+
+            Button:
+                text: "Details"
+                size_hint_x: 15
+                on_press: root.tonext()
+
+            Button:
+                text: "Back"
+                size_hint_x: 15
+                on_press: root.back()
+
+
+        ListView:
+            id: dishes_list_view
+            adapter:
+                ListAdapter(data=["Dishes"], cls=main.DishesListButton)

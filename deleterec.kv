@@ -1,0 +1,38 @@
+<MyLabel@Label>:
+    size_hint:1,2
+    font_size: 32
+
+<DeleteRec>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        ScrollView:
+            id: scroll_view
+            size_hint: 1,2
+            GridLayout:
+                size_hint: 1,2
+                height: self.minimum_height
+                cols: 1
+                MyLabel:
+                    id: name_text
+                    color: 1,.5,0,1
+                    text: root.tab[0]
+                MyLabel:
+                    id: ing_text
+                    color: 1,.5,0,1
+                    text: root.tab[1]
+                MyLabel:
+                    id: rec_text
+                    color: 1,.5,0,1
+                    text: root.tab[2]
+
+
+        Button:
+            text: 'back'
+            size_hint: 1, .2
+            on_press: root.back()
+
+        Button:
+            text: 'delete'
+            size_hint: 1, .2
+            on_press: root.delete()

@@ -1,0 +1,69 @@
+<Adddish>:
+    BoxLayout:
+        id: add_layout
+        orientation: "vertical"
+        padding: 10
+        spacing:10
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: "Dish Name"
+                font_size: 32
+
+                halign: 'center'
+                color: 255, 0, 0, 1
+                text_size: root.width - 20, 32
+            TextInput:
+                id: name_input
+                multiline: False
+                color: 255, 0, 0, 1
+                font_size: 20
+                width: root.height
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: "Ingredients"
+                font_size: 32
+                pos: root.center_x-80, self.y
+
+                color: 255, 0, 0, 1
+                height: root.height
+                text_size: root.width - 20, 32
+            TextInput:
+                id: ingredients_input
+                multiline: True
+                color: 255, 0, 0, 1
+                font_size: 20
+                width: root.height
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: "Preparation"
+                font_size: 32
+                pos: root.center_x-80, self.y
+
+                color: 255, 0, 0, 1
+                height: root.height
+                text_size: root.width - 20, 32
+            TextInput:
+                id: recipe_input
+                multiline: True
+                font_size: 20
+                width: root.height
+
+
+        Button:
+            text: "Add Recipe"
+            font_size: 20
+            on_press: root.add(name_input.text, ingredients_input.text, recipe_input.text)
+
+        Button:
+            text: "Cancel"
+            font_size: 20
+            on_press: root.back()

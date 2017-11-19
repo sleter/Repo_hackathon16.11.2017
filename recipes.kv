@@ -1,0 +1,34 @@
+<MyLabel@Label>:
+    size_hint:1,2
+    color: 1,.5,0,1
+    font_size: 32
+
+<Recipes>:
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            size_hint: 1,2
+            GridLayout:
+                size_hint: 1,4
+                height: self.minimum_height
+                cols: 1
+                MyLabel:
+                    id: name_text
+                    text: root.tab[0]
+                    canvas.before:
+                        Rectangle:
+                            pos: (200,0)
+                            size: 400, 400
+                            source: root.name_texxt
+                MyLabel:
+                    id: ing_text
+                    text: root.tab[1]
+                MyLabel:
+                    id: rec_text
+                    text: root.tab[2]
+
+
+        Button:
+            text: 'back'
+            size_hint: 1, .2
+            on_press: root.back()

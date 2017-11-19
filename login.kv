@@ -1,0 +1,57 @@
+#: include connected.kv
+#: include registration.kv
+
+<Login>:
+    BoxLayout:
+        id: login_layout
+        orientation: "vertical"
+        padding: [10,180,10,10]
+        spacing:10
+
+        BoxLayout:
+            orientation: 'vertical'
+            canvas.before:
+                Rectangle:
+                    pos: root.center_x - 100, root.height-200
+                    size: 200, 200
+                    source: 'ikonka.png'
+            Label:
+                text: "Login"
+                font_size: 32
+                halign: 'center'
+                color: 255, 0, 0, 1
+                height: root.height
+                text_size: root.width - 20, 32
+            TextInput:
+                id: login_input
+                multiline: False
+                color: 255, 0, 0, 1
+                font_size: 30
+                width: root.height
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: "Password"
+                font_size: 32
+                color: 255, 0, 0, 1
+                halign: 'center'
+                text_size: root.width -20, 32
+            TextInput:
+                id: password_input
+                color: 255, 0, 0, 1
+                multiline: False
+                password: True
+                font_size: 30
+
+        Button:
+            text: "Login"
+            font_size: 32
+            on_press: root.do_login(login_input.text,password_input.text)
+
+        Button:
+            text: "Register"
+            font_size: 32
+            on_press: root.add_user()
+

@@ -1,0 +1,65 @@
+#: include recipes.kv
+#: include adddish.kv
+#: include yourdishes.kv
+# -*- coding: utf-8 -*-
+
+<Connected>:
+    ActionBar:
+        pos_hint: {'top': 1}
+        background_color: 255, 255, 255, 1
+        ActionView:
+            use_separator: True
+            ActionPrevious:
+                color: 1,.5,0,1
+                title: "Co Na Obiad"
+                with_previous: False
+            ActionOverflow:
+                background_color: 255,255, 1
+                ActionButton:
+                    size_hint: 1, .2
+                    text: "Twoje przepisy"
+                    color: 1,.5,0,1
+                    on_press: root.yourRec()
+                ActionButton:
+                    size_hint: 1, .2
+                    text: "Stwórz przepis"
+                    color: 1,.5,0,1
+                    on_press: root.createRec()
+                ActionButton:
+                    size_hint: 1, .2
+                    text: "Losuj przepis"
+                    color: 1,.5,0,1
+                    on_press: root.randomRec()
+                ActionButton:
+                    size_hint: 1, .2
+                    text: "Wyloguj"
+                    color: 1,.5,0,1
+                    on_press: root.disconnect()
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Polecane"
+            font_size:45
+            color: 1,.5,0,1
+
+        ScrollView:
+            size_hint: 1,2
+            GridLayout:
+                padding: [50,10,50,10]
+                spacing:10
+                size_hint: 1,3
+                height: self.minimum_height
+                cols: 1
+                MyLabel:
+                    id: name_text
+                    text: root.tab[0]
+                    color: 1,.5,0,1
+                MyLabel:
+                    id: ing_text
+                    text: root.tab[1]
+                    color: 1,.5,0,1
+                MyLabel:
+                    id: rec_text
+                    text: root.tab[2]
+                    color: 1,.5,0,1

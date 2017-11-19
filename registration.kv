@@ -1,0 +1,74 @@
+<Registration>:
+    BoxLayout:
+        id: login_layout
+        orientation: "vertical"
+        padding:10
+        spacing:10
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: "Add Login"
+                font_size: 32
+                halign: 'center'
+                color: 255, 0, 0, 1
+                text_size: root.width - 20, 32
+            TextInput:
+                id: login_input
+                multiline: False
+                font_size: 32
+
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: "Add Password"
+                font_size: 32
+                halign: 'center'
+                color: 255, 0, 0, 1
+                text_size: root.width -20, 32
+            TextInput:
+                id: password_input
+                multiline: False
+                password: True
+                font_size: 32
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: "Confirm Password"
+                font_size: 32
+                color: 255, 0, 0, 1
+                halign: 'center'
+                text_size: root.width -20, 32
+            TextInput:
+                id: password2_input
+                multiline: False
+                password: True
+                font_size: 32
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: "Add E-mail"
+                font_size: 32
+                halign: 'center'
+                color: 255, 0, 0, 1
+                text_size: root.width -20, 32
+            TextInput:
+                id: email_input
+                multiline: False
+                password: True
+                font_size: 32
+
+        Button:
+            text: "Register"
+            font_size: 32
+            on_press: root.submit_user(login_input.text, password_input.text, password2_input.text, email_input.text)
+
+        Button:
+            text: "Cancel"
+            font_size: 32
+            on_press: root.back()
